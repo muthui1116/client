@@ -61,7 +61,7 @@ const UpdateRestaurant = () => {
     formData.append("image", imageFile);
     try {
       console.log("Uploading image...");
-      const response = await fetch("http://localhost:3000/upload", {
+      const response = await fetch("https://client-production-e94d.up.railway.app/upload", {
         method: "POST",
         body: formData,
       });

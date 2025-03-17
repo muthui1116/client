@@ -48,7 +48,7 @@ const RestaurantList = () => {
                 <td>
                   {restaurant.image_url ? (
                     <img
-                      src={`http://localhost:3000${restaurant.image_url}`}
+                      src={`https://client-production-e94d.up.railway.app/${restaurant.image_url}`}
                       alt={restaurant.rname}
                       width="100px"
                       onError={(e) => {
