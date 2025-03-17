@@ -13,14 +13,13 @@ const AddRestaurant = () => {
   const { addRestaurant } = useRestaurantStore();
   const navigate = useNavigate();
 
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
   const uploadImage = async (imageFile) => {
     const formData = new FormData();
     formData.append("image", imageFile);
     
     try {
       console.log("Uploading image...");
-      const response = await fetch(`${API_BASE_URL}/upload`, {
+      const response = await fetch("http://localhost:3000/upload", {
         method: "POST",
         body: formData,
       });

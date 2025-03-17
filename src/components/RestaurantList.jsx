@@ -11,8 +11,6 @@ const RestaurantList = () => {
     fetchData();
   }, []);
 
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
-
   const handleDelete = async (id) => {
     try {
       await removeRestaurant(id);
@@ -50,7 +48,7 @@ const RestaurantList = () => {
                 <td>
                   {restaurant.image_url ? (
                     <img
-                      src={`${API_BASE_URL}${restaurant.image_url}`}
+                      src={`http://localhost:3000${restaurant.image_url}`}
                       alt={restaurant.rname}
                       width="100px"
                       onError={(e) => {
