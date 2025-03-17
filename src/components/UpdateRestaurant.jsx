@@ -13,6 +13,7 @@ const UpdateRestaurant = () => {
   const [rname, setName] = useState("");
   const [location, setLocation] = useState("");
   const [price_range, setPriceRange] = useState("");
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
 
   useEffect(() => {
     const fetchRestaurant = async () => {
@@ -61,7 +62,7 @@ const UpdateRestaurant = () => {
     formData.append("image", imageFile);
     try {
       console.log("Uploading image...");
-      const response = await fetch("https://client-production-e94d.up.railway.app/upload", {
+      const response = await fetch(`${API_BASE_URL}/upload`, {
         method: "POST",
         body: formData,
       });
